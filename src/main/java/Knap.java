@@ -31,7 +31,7 @@ import processing.core.PApplet;
 
         void setTekst(String tekst) {
             p.fill(0);
-
+            p.textSize(12);
             p.text(tekst, positionX +(sizeX/16), positionY + (sizeY/2));
 
         }

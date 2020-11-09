@@ -21,9 +21,7 @@ public class DataBroker {
             String[] cells = p.split(rows[i], ",");
             for (int j = 2; j < cells.length; j++) {
                 p.println(cells);
-                if (cells[j].equals("")) {
-                    cells[j] = "0";
-                }
+
             }
 
         }

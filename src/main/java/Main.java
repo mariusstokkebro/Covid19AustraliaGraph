@@ -26,6 +26,7 @@ public class Main extends PApplet{
 
         @Override
         public void draw() {
+                clear();
                 genAKnap.tegnKnap();
                 genZKnap.tegnKnap();
                 genYKnap.tegnKnap();

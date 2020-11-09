@@ -8,6 +8,7 @@ public class FaktaBoks {
 
     void infoBoks(PApplet p, int posX, int posY){
         this.p = p;
+        p.stroke(255);
         p.rect(posX,posY, 200, 200);
         p.fill(255);
         p.text("Insert Data",posX+10,posY+25);

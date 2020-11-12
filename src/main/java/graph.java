@@ -12,7 +12,7 @@ public class graph {
         this.dates = dates;
         this.dataMap = dataMap;
     }
-
+// MArcus lugtter
     void drawGraph() {
         for(int i =0;i< dates.size();i++){
             p.fill(140,180,250);

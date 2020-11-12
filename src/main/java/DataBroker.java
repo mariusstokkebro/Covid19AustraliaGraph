@@ -1,12 +1,16 @@
 import processing.core.PApplet;
-
+import processing.data.Table;
+import processing.data.TableRow;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DataBroker {
     PApplet p;
+Table dataTable;
+    HashMap<String,Data> dataMap = new HashMap<>();
+    ArrayList<String> dates = new ArrayList<>();
 
 
-    ArrayList<Data> list = new ArrayList<Data>();
 
     DataBroker(PApplet p) {
         this.p = p;
@@ -14,18 +18,19 @@ public class DataBroker {
     }
 
     void loadData() {
-
-        String[] rows = p.loadStrings("owid-covid-data.csv");
-        String[] location = rows[0].split(",");
-        for (int i = 1; i < rows.length; i++) {
-            String[] cells = p.split(rows[i], ",");
-            for (int j = 2; j < cells.length; j++) {
-                p.println(cells);
-
+        dataTable = p.loadTable("owid-covid-data.csv","header");
+        for (TableRow row : dataTable.rows()) {
+            if(row.getString("location").equals("Australia")){
+                dates.add(row.getString("date"));
+                getData(row.getString("date"),row.getInt("total_cases"));
             }
-
         }
 
 
+        }
+    void getData(String key,int cases){
+        dataMap.put(key,new Data(key,cases));
     }
+
+
 }

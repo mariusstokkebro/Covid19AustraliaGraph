@@ -2,9 +2,11 @@ import processing.core.PApplet;
 
     public class Data {
         PApplet p;
-        int Sick;
-        Data(int Sick){
-            this.Sick= Sick;
+        int cases;
+        String date;
+        Data(String date,int cases){
+            this.cases= cases;
+            this.date = date;
 
         }
 

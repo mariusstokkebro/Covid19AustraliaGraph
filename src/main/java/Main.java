@@ -6,7 +6,7 @@ public class Main extends PApplet{
 
         DataBroker db;
         graph casesGraph;
-        FaktaBoks makeAFaktaBoks;
+
 
         @Override
         public void settings() {
@@ -14,7 +14,7 @@ public class Main extends PApplet{
                fullScreen();
                //size(500,500);
 
-                makeAFaktaBoks = new FaktaBoks();
+
                 db = new DataBroker(this);
                 casesGraph = new graph(this,db.dates,db.dataMap);
         }
@@ -31,7 +31,7 @@ public class Main extends PApplet{
 
                 background(100);
 
-                makeAFaktaBoks.infoBoks(this,mouseX,mouseY,30,40);
+
                casesGraph.drawGraph();
 
         }

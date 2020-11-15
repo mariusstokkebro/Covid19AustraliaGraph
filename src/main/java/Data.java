@@ -4,9 +4,11 @@ import processing.core.PApplet;
         PApplet p;
         int cases;
         String date;
-        Data(String date,int cases){
+        int deaths;
+        Data(String date,int cases,int deaths){
             this.cases= cases;
             this.date = date;
+            this.deaths = deaths;
 
         }
 

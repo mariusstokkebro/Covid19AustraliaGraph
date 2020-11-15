@@ -7,8 +7,11 @@ import java.util.HashMap;
 public class DataBroker {
     PApplet p;
 Table dataTable;
+
     HashMap<String,Data> dataMap = new HashMap<>();
     ArrayList<String> dates = new ArrayList<>();
+
+
 
 
 
@@ -22,14 +25,17 @@ Table dataTable;
         for (TableRow row : dataTable.rows()) {
             if(row.getString("location").equals("Australia")){
                 dates.add(row.getString("date"));
-                getData(row.getString("date"),row.getInt("total_cases"));
+                getData(row.getString("date"),row.getInt("total_cases"),row.getInt("total_deaths"));
+
             }
         }
 
-
         }
-    void getData(String key,int cases){
-        dataMap.put(key,new Data(key,cases));
+    void getData(String key,int cases,int deaths){
+        dataMap.put(key,new Data(key,cases,deaths));
+        p.println(cases);
+
+
     }
 
 

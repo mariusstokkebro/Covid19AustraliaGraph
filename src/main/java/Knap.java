@@ -26,7 +26,9 @@ import processing.core.PApplet;
                     mouseX < positionX + sizeX &&
                     mouseY > positionY &&
                     mouseY < positionY + sizeY) {
+
             }
+
         }
 
         void setTekst(String tekst) {
@@ -39,8 +41,14 @@ import processing.core.PApplet;
         void tegnKnap() {
             p.stroke(1, 46, 74);
             p.noFill();
-            p.fill(200);
-            p.rect(positionX, positionY, sizeX, sizeY);
+            if(erKlikket()){
+                p.fill(100,100,200);
+                p.rect(positionX, positionY, sizeX, sizeY);
+            }
+            else {
+                p.fill(200);
+                p.rect(positionX, positionY, sizeX, sizeY);
+            }
             setTekst(text);
         }
 

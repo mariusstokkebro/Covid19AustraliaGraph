@@ -2,9 +2,8 @@ import processing.core.PApplet;
 
 public class Main extends PApplet{
         public static void main(String[] args) { PApplet.main("Main"); }
-        AlmindeligKnap sickKnap;
-        AlmindeligKnap deathsKnap;
-        AlmindeligKnap genZKnap;
+
+
         DataBroker db;
         graph casesGraph;
         FaktaBoks makeAFaktaBoks;
@@ -12,9 +11,9 @@ public class Main extends PApplet{
         @Override
         public void settings() {
                 super.settings();
-                fullScreen();
-                sickKnap = new AlmindeligKnap(this,100,50,100,50,"Sick");
-                deathsKnap = new AlmindeligKnap(this,300,50,100,50,"Deaths");
+               fullScreen();
+               //size(500,500);
+
                 makeAFaktaBoks = new FaktaBoks();
                 db = new DataBroker(this);
                 casesGraph = new graph(this,db.dates,db.dataMap);
@@ -31,10 +30,16 @@ public class Main extends PApplet{
                 clear();
 
                 background(100);
-                sickKnap.tegnKnap();
-                deathsKnap.tegnKnap();
-                makeAFaktaBoks.infoBoks(this,mouseX,mouseY);
+
+                makeAFaktaBoks.infoBoks(this,mouseX,mouseY,30,40);
                casesGraph.drawGraph();
+
+        }
+
+        @Override
+        public void mouseClicked() {
+        casesGraph.klik();
+
 
         }
 }

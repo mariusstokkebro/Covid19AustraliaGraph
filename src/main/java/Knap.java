@@ -33,7 +33,7 @@ import processing.core.PApplet;
 
         void setTekst(String tekst) {
             p.fill(0);
-            p.textSize(12);
+            p.textSize(16);
             p.text(tekst, positionX +(sizeX/16), positionY + (sizeY/2));
 
         }
@@ -46,7 +46,7 @@ import processing.core.PApplet;
                 p.rect(positionX, positionY, sizeX, sizeY);
             }
             else {
-                p.fill(200);
+                p.fill(3,145,213);
                 p.rect(positionX, positionY, sizeX, sizeY);
             }
             setTekst(text);

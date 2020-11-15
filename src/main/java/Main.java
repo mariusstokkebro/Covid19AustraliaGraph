@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Main extends PApplet{
         public static void main(String[] args) { PApplet.main("Main"); }
@@ -6,8 +7,7 @@ public class Main extends PApplet{
 
         DataBroker db;
         graph casesGraph;
-
-
+        PImage img;
         @Override
         public void settings() {
                 super.settings();
@@ -22,6 +22,8 @@ public class Main extends PApplet{
         @Override
         public void setup() {
                 db.loadData();
+                img = loadImage("australien er cool.PNG");
+
 
         }
 
@@ -29,9 +31,12 @@ public class Main extends PApplet{
         public void draw() {
                 clear();
 
-                background(100);
 
-
+                background(255);
+                image(img,1650,-10);
+                textSize(40);
+                fill(3,145,213);
+                text("Cases of covid-19 i Australia",width/2-270,100);
                casesGraph.drawGraph();
 
         }

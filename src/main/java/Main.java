@@ -36,7 +36,7 @@ public class Main extends PApplet{
                 image(img,1650,-10);
                 textSize(40);
                 fill(3,145,213);
-                text("Cases of covid-19 i Australia",width/2-270,100);
+                text("Cases of covid-19 in Australia",width/2-270,100);
                casesGraph.drawGraph();
 
         }
